@@ -7,7 +7,7 @@ Professioneller Animation Player für ZVV Header-Animationen
 
 ## 📋 Übersicht
 
-Diese Repository enthält **24 professionelle Lottie-Animationen** für ZVV Header-Elemente mit einem modernen, interaktiven Animation Player.
+Diese Repository enthält **34 professionelle Lottie-Animationen** für ZVV Header-Elemente mit einem modernen, interaktiven Animation Player.
 
 ### ✨ Features
 
@@ -79,6 +79,24 @@ zvv-lottie/
 | 22 | ☀️ Radial Burst | Radiale Strahlen vom Zentrum | 800×800 |
 | 23 | ✨ Particles | Aufsteigende Partikel-Sammlung | 600×1000 |
 | 24 | 🔗 Network Nodes | Verbindungslinien zwischen Knoten | 1000×400 |
+
+### 🎨 AI-Generiert V2 (25-34) - Verbessert
+**Mit dicken Pfeilen, großen Flächen & bunten Farben aus Element 09**
+
+> 💪 **Optimiert:** Diese Animationen verwenden dickere Striche (80-350px), größere Flächen und die harmonische Farbpalette aus dem Original-Set.
+
+| Element | Typ | Beschreibung | Besonderheit |
+|---------|-----|-------------|-------------|
+| 25 | 🎯 Bold Route | Dicker horizontaler Pfeil | 80px Stroke + 240px BG |
+| 26 | 🌀 Curved Bold | Massiver geschwungener Pfeil | 100px Stroke + 300px BG |
+| 27 | ⬆️ Multi-Arrow | Drei große vertikale Pfeile | 120px Strokes, parallele Formation |
+| 28 | 🔄 Bidirectional | Dicke Hin- und Rückpfeile | 120px + rotierendes Zentrum |
+| 29 | 🍰 Pie Segments | Rotierende Tortensegmente | Große 200px Flächen |
+| 30 | 🎬 Arrow Sequence | Drei sequentielle Pfeile | 200px Trail-Linie |
+| 31 | ⭕ Mega Circles | Pulsierende Riesenkreise | 600px, 450px, 300px Durchmesser |
+| 32 | 📏 Vertical Bold | Massive vertikale Balken | 250px breite Rechtecke |
+| 33 | ✖️ Diagonal Cross | Kreuzende diagonale Pfeile | 250px-350px breite Pfade |
+| 34 | 💥 Ultra Arrow | Ultra-dicker horizontal | 150px Stroke + 350px BG |
 
 ## 🛠️ Technologie
 

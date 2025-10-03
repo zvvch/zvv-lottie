@@ -15,16 +15,20 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://lottie.zvv.dev/">
-    <meta property="og:title" content="ZVV Animation Studio">
-    <meta property="og:description" content="Professioneller Animation Player für ZVV Header-Animationen">
-    <meta property="og:image" content="https://lottie.zvv.dev/og-image.png">
+    <meta property="og:title" content="ZVV Animation Studio - 24 Professional Lottie Animations">
+    <meta property="og:description" content="Interaktiver Animation Player für ZVV Header-Elemente. 24 professionelle Lottie-Animationen mit voller Playback-Kontrolle, Live-Vorschauen und Keyboard-Shortcuts.">
+    <meta property="og:image" content="https://lottie.zvv.dev/og-image.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="ZVV Animation Studio Preview mit 24 Animationen">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://lottie.zvv.dev/">
-    <meta property="twitter:title" content="ZVV Animation Studio">
-    <meta property="twitter:description" content="Professioneller Animation Player für ZVV Header-Animationen">
-    <meta property="twitter:image" content="https://lottie.zvv.dev/og-image.png">
+    <meta property="twitter:title" content="ZVV Animation Studio - 24 Professional Lottie Animations">
+    <meta property="twitter:description" content="Interaktiver Animation Player für ZVV Header-Elemente. 24 professionelle Lottie-Animationen mit voller Playback-Kontrolle.">
+    <meta property="twitter:image" content="https://lottie.zvv.dev/og-image.svg">
+    <meta property="twitter:image:alt" content="ZVV Animation Studio Preview">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
@@ -600,7 +604,7 @@
         </div>
             <div class="header-stats">
                 <div class="stat">
-                    <div class="stat-value" id="totalAnimations">24</div>
+                    <div class="stat-value" id="totalAnimations">34</div>
                     <div class="stat-label">Animationen</div>
                 </div>
                 <div class="stat">
@@ -709,7 +713,17 @@
             'zvv_header_element21.json',
             'zvv_header_element22.json',
             'zvv_header_element23.json',
-            'zvv_header_element24.json'
+            'zvv_header_element24.json',
+            'zvv_header_element25.json',
+            'zvv_header_element26.json',
+            'zvv_header_element27.json',
+            'zvv_header_element28.json',
+            'zvv_header_element29.json',
+            'zvv_header_element30.json',
+            'zvv_header_element31.json',
+            'zvv_header_element32.json',
+            'zvv_header_element33.json',
+            'zvv_header_element34.json'
         ];
 
         let currentIndex = 0;
@@ -756,8 +770,20 @@
         function loadAnimation(index) {
             document.getElementById('loading').classList.add('active');
             
+            // Safe destroy with error handling
             if (animationInstance) {
-                animationInstance.destroy();
+                try {
+                    animationInstance.destroy();
+                } catch (e) {
+                    console.warn('Animation destroy error (safe to ignore):', e);
+                }
+                animationInstance = null;
+            }
+
+            // Clear container
+            const container = document.getElementById('animationPlayer');
+            if (container) {
+                container.innerHTML = '';
             }
 
             fetch(animationPaths[index])

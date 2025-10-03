@@ -58,6 +58,39 @@ und dieses Projekt folgt [Semantic Versioning](https://semver.org/lang/de/).
 
 ---
 
+## [1.2.0] - 2025-10-03
+
+### ✨ Added - Verbesserte AI-Animationen
+- **10 neue verbesserte Lottie-Animationen** (Element 25-34)
+  - Element 25: Bold Route - Dicker horizontaler Pfeil (80px + 240px BG)
+  - Element 26: Curved Bold - Massiver geschwungener Pfeil (100px + 300px BG)
+  - Element 27: Multi-Arrow - Drei große vertikale Pfeile
+  - Element 28: Bidirectional - Dicke Hin- und Rückpfeile mit Rotation
+  - Element 29: Pie Segments - Rotierende Tortensegmente
+  - Element 30: Arrow Sequence - Drei sequentielle Pfeile
+  - Element 31: Mega Circles - Pulsierende Riesenkreise (600px, 450px, 300px)
+  - Element 32: Vertical Bold - Massive vertikale Balken
+  - Element 33: Diagonal Cross - Kreuzende diagonale Pfeile
+  - Element 34: Ultra Arrow - Ultra-dicker horizontal (150px + 350px BG)
+
+### 🎨 Improved
+- **Dickere Striche**: 80-350px (vs. vorher 6-20px)
+- **Größere Flächen**: Massive Rechtecke und Kreise
+- **Bunte Farbpalette**: Farben aus Element 09 (Rot, Orange, Gelb, Grün, Blau, Lila)
+- Mehr Pfeile pro Animation
+- Harmonischere Farbkombinationen
+
+### 🐛 Fixed
+- Race Condition beim schnellen Animationswechsel
+- Safe destroy mit error handling
+- Container wird jetzt geleert vor neuem Load
+
+### 📝 Documentation
+- OG-Image hinzugefügt (og-image.svg)
+- Social Media Meta-Tags optimiert
+- Klare AI-Kennzeichnung mit 🤖 Badge
+- API-Flags für AI-generated content
+
 ## [1.1.0] - 2025-10-03
 
 ### ✨ Added - Neue Animationen
