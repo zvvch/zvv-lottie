@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>ZVV Animation Studio - Professional Lottie Player</title>
+    <meta name="title" content="ZVV Animation Studio - Professional Lottie Player">
+    <meta name="description" content="Professioneller Animation Player für ZVV Header-Animationen. Interaktive Lottie-Animationen mit voller Playback-Kontrolle.">
+    <meta name="keywords" content="ZVV, Lottie, Animation, Player, SVG, Motion Graphics, Zürich">
+    <meta name="author" content="Zürcher Verkehrsverbund">
+    <meta name="theme-color" content="#0E377D">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lottie.zvv.dev/">
+    <meta property="og:title" content="ZVV Animation Studio">
+    <meta property="og:description" content="Professioneller Animation Player für ZVV Header-Animationen">
+    <meta property="og:image" content="https://lottie.zvv.dev/og-image.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://lottie.zvv.dev/">
+    <meta property="twitter:title" content="ZVV Animation Studio">
+    <meta property="twitter:description" content="Professioneller Animation Player für ZVV Header-Animationen">
+    <meta property="twitter:image" content="https://lottie.zvv.dev/og-image.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
+    
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="ZVV Lottie">
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.0/lottie.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0E377D;
+            --primary-light: #72C6E7;
+            --accent: #AEC3C7;
+            --success: #69C34D;
+            --danger: #FA3920;
+            --warning: #FFBA25;
+            --bg-dark: #0A0A0A;
+            --bg-card: #1A1A1A;
+            --bg-hover: #252525;
+            --text-primary: #FFFFFF;
+            --text-secondary: #B0B0B0;
+            --border: #2A2A2A;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #1a1a2e 100%);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-content {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 4px 15px rgba(14, 55, 125, 0.4);
+        }
+
+        .logo-text h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-light), var(--text-primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo-text p {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        .header-stats {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-light);
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1600px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 2rem;
+        }
+
+        /* Player Section */
+        .player-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .player-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1.5rem;
+        }
+
+        .animation-info h2 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .animation-meta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(114, 198, 231, 0.1);
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: var(--primary-light);
+            border: 1px solid rgba(114, 198, 231, 0.2);
+        }
+
+        .animation-container {
+            width: 100%;
+            height: 600px;
+            background: linear-gradient(135deg, rgba(14, 55, 125, 0.05) 0%, rgba(114, 198, 231, 0.05) 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid var(--border);
+        }
+
+        #animationPlayer {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Controls */
+        .controls-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+        }
+
+        .playback-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .control-btn {
+            background: var(--bg-hover);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .control-btn:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(14, 55, 125, 0.4);
+        }
+
+        .control-btn.play {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border: none;
+            box-shadow: 0 4px 20px rgba(14, 55, 125, 0.4);
+        }
+
+        .control-btn.play:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 24px rgba(14, 55, 125, 0.6);
+        }
+
+        .progress-container {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: var(--bg-hover);
+            border-radius: 3px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .control-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .control-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .control-value {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .slider {
+            width: 120px;
+            height: 6px;
+            background: var(--bg-hover);
+            border-radius: 3px;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            background: var(--primary-light);
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(114, 198, 231, 0.4);
+        }
+
+        .slider::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            background: var(--primary-light);
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 48px;
+            height: 24px;
+            background: var(--bg-hover);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .toggle-switch.active {
+            background: var(--primary);
+        }
+
+        .toggle-switch::after {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            background: white;
+            border-radius: 50%;
+            top: 3px;
+            left: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .toggle-switch.active::after {
+            left: 27px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .sidebar-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+        }
+
+        .sidebar-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: var(--bg-hover);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .animation-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+            max-height: 70vh;
+            overflow-y: auto;
+            padding-right: 0.5rem;
+        }
+
+        .animation-grid::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .animation-grid::-webkit-scrollbar-track {
+            background: var(--bg-hover);
+            border-radius: 3px;
+        }
+
+        .animation-grid::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 3px;
+        }
+
+        .animation-item {
+            background: var(--bg-hover);
+            border: 2px solid transparent;
+            border-radius: 12px;
+            padding: 0.75rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .animation-item:hover {
+            border-color: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(114, 198, 231, 0.2);
+        }
+
+        .animation-item.active {
+            border-color: var(--primary);
+            background: rgba(14, 55, 125, 0.15);
+            box-shadow: 0 4px 16px rgba(14, 55, 125, 0.4);
+        }
+
+        .animation-preview {
+            width: 100%;
+            height: 100px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .animation-name {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-align: center;
+        }
+
+        .play-indicator {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 32px;
+            height: 32px;
+            background: rgba(14, 55, 125, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .animation-item.active .play-indicator {
+            opacity: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                order: -1;
+            }
+
+            .animation-grid {
+                grid-template-columns: repeat(4, 1fr);
+                max-height: 200px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .animation-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .animation-container {
+                height: 400px;
+            }
+
+            .playback-controls {
+                flex-wrap: wrap;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .loading.active {
+            display: block;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid var(--border);
+            border-top-color: var(--primary-light);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .player-card, .controls-card, .sidebar-card {
+            animation: fadeIn 0.6s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">🎬</div>
+                <div class="logo-text">
+                    <h1>ZVV Animation Studio</h1>
+                    <p>Professional Animation Player</p>
+                </div>
+            </div>
+            <div class="header-stats">
+                <div class="stat">
+                    <div class="stat-value" id="totalAnimations">14</div>
+                    <div class="stat-label">Animationen</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="currentIndex">01</div>
+                    <div class="stat-label">Aktuell</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Player Section -->
+        <div class="player-section">
+            <!-- Player Card -->
+            <div class="player-card">
+                <div class="player-header">
+                    <div class="animation-info">
+                        <h2 id="animationTitle">ZVV Header Element 01</h2>
+                        <div class="animation-meta">
+                            <span class="meta-badge">📐 <span id="animationDimensions">1952×3100</span></span>
+                            <span class="meta-badge">⏱️ <span id="animationDuration">12s</span></span>
+                            <span class="meta-badge">🎞️ <span id="animationFrames">300 Frames</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="animation-container">
+                    <div id="animationPlayer"></div>
+                    <div class="loading" id="loading">
+                        <div class="spinner"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls Card -->
+            <div class="controls-card">
+                <div class="playback-controls">
+                    <button class="control-btn" id="prevBtn" title="Vorherige">⏮️</button>
+                    <button class="control-btn play" id="playBtn" title="Play/Pause">▶️</button>
+                    <button class="control-btn" id="nextBtn" title="Nächste">⏭️</button>
+                    <button class="control-btn" id="restartBtn" title="Neu starten">🔄</button>
+                </div>
+
+                <div class="progress-container">
+                    <div class="progress-info">
+                        <span id="currentTime">0:00</span>
+                        <span id="totalTime">0:00</span>
+                    </div>
+                    <div class="progress-bar" id="progressBar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <div class="control-item">
+                        <span class="control-label">⚡ Geschwindigkeit</span>
+                        <div class="control-value">
+                            <input type="range" class="slider" id="speedSlider" min="0.25" max="2" step="0.25" value="1">
+                            <span id="speedValue">1x</span>
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <span class="control-label">🔁 Loop</span>
+                        <div class="toggle-switch active" id="loopToggle"></div>
+                    </div>
+                    <div class="control-item">
+                        <span class="control-label">🎨 Hintergrund</span>
+                        <div class="toggle-switch" id="bgToggle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-card">
+                <h3 class="sidebar-title">Animationen</h3>
+                <input type="text" class="search-box" id="searchBox" placeholder="🔍 Animation suchen...">
+                <div class="animation-grid" id="animationGrid"></div>
+            </div>
+        </aside>
+    </div>
+
+    <script>
+        const animationPaths = [
+            'zvv_header_element01.json',
+            'zvv_header_element02.json',
+            'zvv_header_element03.json',
+            'zvv_header_element04.json',
+            'zvv_header_element05.json',
+            'zvv_header_element06.json',
+            'zvv_header_element07.json',
+            'zvv_header_element08.json',
+            'zvv_header_element09.json',
+            'zvv_header_element10.json',
+            'zvv_header_element11.json',
+            'zvv_header_element12.json',
+            'zvv_header_element13.json',
+            'zvv_header_element14.json'
+        ];
+
+        let currentIndex = 0;
+        let animationInstance = null;
+        let isPlaying = true;
+        let animationData = null;
+
+        // Initialize
+        function init() {
+            createAnimationGrid();
+            loadAnimation(currentIndex);
+            setupEventListeners();
+        }
+
+        // Create animation grid
+        function createAnimationGrid() {
+            const grid = document.getElementById('animationGrid');
+            animationPaths.forEach((path, index) => {
+                const item = document.createElement('div');
+                item.className = 'animation-item' + (index === 0 ? ' active' : '');
+                item.innerHTML = `
+                    <div class="animation-preview" id="preview${index}">
+                        <div class="play-indicator">▶</div>
+                    </div>
+                    <div class="animation-name">Element ${String(index + 1).padStart(2, '0')}</div>
+                `;
+                item.onclick = () => selectAnimation(index);
+                grid.appendChild(item);
+
+                // Load preview
+                lottie.loadAnimation({
+                    container: document.getElementById(`preview${index}`),
+                    renderer: 'svg',
+                    loop: true,
+                    autoplay: true,
+                    path: path
+                });
+            });
+        }
+
+        // Load animation
+        function loadAnimation(index) {
+            document.getElementById('loading').classList.add('active');
+            
+            if (animationInstance) {
+                animationInstance.destroy();
+            }
+
+            fetch(animationPaths[index])
+                .then(response => response.json())
+                .then(data => {
+                    animationData = data;
+                    
+                    animationInstance = lottie.loadAnimation({
+                        container: document.getElementById('animationPlayer'),
+                        renderer: 'svg',
+                        loop: document.getElementById('loopToggle').classList.contains('active'),
+                        autoplay: isPlaying,
+                        animationData: data
+                    });
+
+                    updateUI(index, data);
+                    setupAnimationListeners();
+                    document.getElementById('loading').classList.remove('active');
+                })
+                .catch(err => {
+                    console.error('Error loading animation:', err);
+                    document.getElementById('loading').classList.remove('active');
+                });
+        }
+
+        // Update UI
+        function updateUI(index, data) {
+            currentIndex = index;
+            
+            // Update title
+            document.getElementById('animationTitle').textContent = `ZVV Header Element ${String(index + 1).padStart(2, '0')}`;
+            
+            // Update meta info
+            document.getElementById('animationDimensions').textContent = `${data.w}×${data.h}`;
+            const duration = data.op / data.fr;
+            document.getElementById('animationDuration').textContent = `${duration.toFixed(1)}s`;
+            document.getElementById('animationFrames').textContent = `${data.op} Frames`;
+            document.getElementById('totalTime').textContent = formatTime(duration);
+            
+            // Update current index
+            document.getElementById('currentIndex').textContent = String(index + 1).padStart(2, '0');
+            
+            // Update active state
+            document.querySelectorAll('.animation-item').forEach((item, i) => {
+                item.classList.toggle('active', i === index);
+            });
+
+            // Update navigation buttons
+            document.getElementById('prevBtn').disabled = index === 0;
+            document.getElementById('nextBtn').disabled = index === animationPaths.length - 1;
+        }
+
+        // Setup animation listeners
+        function setupAnimationListeners() {
+            animationInstance.addEventListener('enterFrame', () => {
+                const currentFrame = animationInstance.currentFrame;
+                const totalFrames = animationInstance.totalFrames;
+                const progress = (currentFrame / totalFrames) * 100;
+                
+                document.getElementById('progressFill').style.width = progress + '%';
+                
+                const currentTime = currentFrame / animationData.fr;
+                document.getElementById('currentTime').textContent = formatTime(currentTime);
+            });
+
+            animationInstance.addEventListener('complete', () => {
+                if (!document.getElementById('loopToggle').classList.contains('active')) {
+                    isPlaying = false;
+                    document.getElementById('playBtn').textContent = '▶️';
+                }
+            });
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Play/Pause
+            document.getElementById('playBtn').onclick = () => {
+                if (isPlaying) {
+                    animationInstance.pause();
+                    document.getElementById('playBtn').textContent = '▶️';
+                } else {
+                    animationInstance.play();
+                    document.getElementById('playBtn').textContent = '⏸️';
+                }
+                isPlaying = !isPlaying;
+            };
+
+            // Navigation
+            document.getElementById('prevBtn').onclick = () => {
+                if (currentIndex > 0) {
+                    selectAnimation(currentIndex - 1);
+                }
+            };
+
+            document.getElementById('nextBtn').onclick = () => {
+                if (currentIndex < animationPaths.length - 1) {
+                    selectAnimation(currentIndex + 1);
+                }
+            };
+
+            document.getElementById('restartBtn').onclick = () => {
+                animationInstance.goToAndPlay(0);
+                isPlaying = true;
+                document.getElementById('playBtn').textContent = '⏸️';
+            };
+
+            // Speed control
+            document.getElementById('speedSlider').oninput = (e) => {
+                const speed = parseFloat(e.target.value);
+                animationInstance.setSpeed(speed);
+                document.getElementById('speedValue').textContent = speed + 'x';
+            };
+
+            // Loop toggle
+            document.getElementById('loopToggle').onclick = (e) => {
+                e.target.classList.toggle('active');
+                const loop = e.target.classList.contains('active');
+                animationInstance.loop = loop;
+            };
+
+            // Background toggle
+            document.getElementById('bgToggle').onclick = (e) => {
+                e.target.classList.toggle('active');
+                const container = document.querySelector('.animation-container');
+                if (e.target.classList.contains('active')) {
+                    container.style.background = '#FFFFFF';
+                } else {
+                    container.style.background = 'linear-gradient(135deg, rgba(14, 55, 125, 0.05) 0%, rgba(114, 198, 231, 0.05) 100%)';
+                }
+            };
+
+            // Progress bar
+            document.getElementById('progressBar').onclick = (e) => {
+                const rect = e.target.getBoundingClientRect();
+                const percent = (e.clientX - rect.left) / rect.width;
+                const frame = percent * animationInstance.totalFrames;
+                animationInstance.goToAndPlay(frame, true);
+            };
+
+            // Search
+            document.getElementById('searchBox').oninput = (e) => {
+                const search = e.target.value.toLowerCase();
+                document.querySelectorAll('.animation-item').forEach((item, index) => {
+                    const name = `element ${String(index + 1).padStart(2, '0')}`;
+                    item.style.display = name.includes(search) ? 'block' : 'none';
+                });
+            };
+
+            // Keyboard shortcuts
+            document.addEventListener('keydown', (e) => {
+                if (e.code === 'Space') {
+                    e.preventDefault();
+                    document.getElementById('playBtn').click();
+                } else if (e.code === 'ArrowLeft') {
+                    document.getElementById('prevBtn').click();
+                } else if (e.code === 'ArrowRight') {
+                    document.getElementById('nextBtn').click();
+                } else if (e.code === 'KeyR') {
+                    document.getElementById('restartBtn').click();
+                }
+            });
+        }
+
+        // Select animation
+        function selectAnimation(index) {
+            loadAnimation(index);
+            isPlaying = true;
+            document.getElementById('playBtn').textContent = '⏸️';
+        }
+
+        // Format time
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${String(secs).padStart(2, '0')}`;
+        }
+
+        // Initialize on load
+        init();
+    </script>
+</body>
+</html>

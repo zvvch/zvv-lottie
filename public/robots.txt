@@ -1,0 +1,11 @@
+# robots.txt for lottie.zvv.dev
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://lottie.zvv.dev/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
