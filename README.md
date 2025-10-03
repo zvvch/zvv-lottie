@@ -190,5 +190,5 @@ Bei Fragen oder Problemen:
 
 ---
 
-**Made with 🎬 Lottie & ❤️**
+**Made with 🚊 ZVV & ❤️**
 
