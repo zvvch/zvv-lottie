@@ -58,6 +58,27 @@ und dieses Projekt folgt [Semantic Versioning](https://semver.org/lang/de/).
 
 ---
 
+## [1.1.0] - 2025-10-03
+
+### ✨ Added - Neue Animationen
+- **10 neue Lottie-Animationen** (Element 15-24)
+  - Element 15: Network Hub - Pulsierende Netzwerk-Knotenpunkte
+  - Element 16: Route Animation - A→B Routenvisualisierung
+  - Element 17: Wave Expansion - Wellenförmige Expansionen
+  - Element 18: Progress Indicator - Zirkulärer Fortschritt
+  - Element 19: Flow Lines - Mehrere fließende Wellenlinien
+  - Element 20: Geometric Squares - Rotierende Quadrate
+  - Element 21: Bar Chart - Animierte Balkendiagramme
+  - Element 22: Radial Burst - Strahlende Energie
+  - Element 23: Particles - Aufsteigende Partikel
+  - Element 24: Network Nodes - Verbindungslinien
+
+### 🎨 Changed
+- Favicon auf Palette-Emoji 🎨 geändert
+- API-Endpoint mit umfassenden Descriptions erweitert
+- Player zeigt jetzt 24 statt 14 Animationen
+- Verbesserte Tags für bessere Searchability
+
 ## [Unreleased]
 
 ### Geplant

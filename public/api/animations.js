@@ -183,6 +183,126 @@ export default function handler(req, res) {
       frames: 150,
       duration: 6.0,
       colors: ['#E20613', '#EE7D00', '#FFBA3B', '#AEC848']
+    },
+    {
+      id: 15,
+      name: 'ZVV Header Element 15',
+      filename: 'zvv_header_element15.json',
+      description: 'Pulsierende Netzwerk-Knotenpunkte mit rotierenden Ringen. Visualisiert zentrale Verkehrsknotenpunkte und deren Verbindungen im ZVV-Netz.',
+      tags: ['netzwerk', 'knotenpunkte', 'rotation', 'pulsierend', 'verbindungen', 'hub'],
+      dimensions: { width: 800, height: 800 },
+      fps: 30,
+      frames: 180,
+      duration: 6.0,
+      colors: ['#0E377D', '#72C6E7', '#69C34D', '#FA3920', '#FFBA25', '#AE0880', '#F3358D']
+    },
+    {
+      id: 16,
+      name: 'ZVV Header Element 16',
+      filename: 'zvv_header_element16.json',
+      description: 'Animierte Routenvisualisierung von Start zu Ziel. Zeigt die Reise durch das ÖV-Netz mit expandierenden Wellen und bewegtem Pfeil.',
+      tags: ['route', 'reise', 'start', 'ziel', 'pfeil', 'wellen', 'navigation'],
+      dimensions: { width: 1200, height: 400 },
+      fps: 30,
+      frames: 120,
+      duration: 4.0,
+      colors: ['#0E377D', '#72C6E7', '#69C34D', '#FA3920']
+    },
+    {
+      id: 17,
+      name: 'ZVV Header Element 17',
+      filename: 'zvv_header_element17.json',
+      description: 'Wellenförmige Expansionen vom Zentrum ausgehend. Symbolisiert die Ausbreitung von Informationen und Mobilität im Verkehrsnetz.',
+      tags: ['wellen', 'expansion', 'zentrum', 'ausbreitung', 'information', 'mobilität'],
+      dimensions: { width: 600, height: 600 },
+      fps: 30,
+      frames: 150,
+      duration: 5.0,
+      colors: ['#0E377D', '#72C6E7', '#69C34D']
+    },
+    {
+      id: 18,
+      name: 'ZVV Header Element 18',
+      filename: 'zvv_header_element18.json',
+      description: 'Zirkulärer Fortschrittsindikator mit 100% Completion. Perfekt für Ladeanimationen, Status-Updates oder Erfolgsmeldungen.',
+      tags: ['fortschritt', 'progress', 'zirkular', 'timer', 'status', 'completion'],
+      dimensions: { width: 500, height: 500 },
+      fps: 30,
+      frames: 180,
+      duration: 6.0,
+      colors: ['#0E377D', '#72C6E7', '#69C34D']
+    },
+    {
+      id: 19,
+      name: 'ZVV Header Element 19',
+      filename: 'zvv_header_element19.json',
+      description: 'Mehrere fließende Wellenlinien in sanfter Bewegung. Repräsentiert den harmonischen Fluss verschiedener Verkehrslinien.',
+      tags: ['wellen', 'linien', 'fließend', 'harmonisch', 'mehrfach', 'flow'],
+      dimensions: { width: 1000, height: 600 },
+      fps: 30,
+      frames: 150,
+      duration: 5.0,
+      colors: ['#0E377D', '#72C6E7', '#69C4D']
+    },
+    {
+      id: 20,
+      name: 'ZVV Header Element 20',
+      filename: 'zvv_header_element20.json',
+      description: 'Rotierende geometrische Quadrate in verschachtelter Anordnung. Moderne, abstrakte Darstellung von Struktur und Organisation.',
+      tags: ['quadrate', 'rotation', 'geometrisch', 'verschachtelt', 'struktur', 'modern'],
+      dimensions: { width: 700, height: 700 },
+      fps: 30,
+      frames: 120,
+      duration: 4.0,
+      colors: ['#0E377D', '#72C6E7', '#69C34D']
+    },
+    {
+      id: 21,
+      name: 'ZVV Header Element 21',
+      filename: 'zvv_header_element21.json',
+      description: 'Animierte Balkendiagramme mit rhythmischem Wachstum. Visualisiert Statistiken, Auslastung oder Frequenzen im Verkehrsnetz.',
+      tags: ['balken', 'diagramm', 'statistik', 'wachstum', 'daten', 'rhythmisch'],
+      dimensions: { width: 900, height: 500 },
+      fps: 30,
+      frames: 150,
+      duration: 5.0,
+      colors: ['#0E377D', '#72C6E7', '#69C34D', '#FFBA25', '#FA3920']
+    },
+    {
+      id: 22,
+      name: 'ZVV Header Element 22',
+      filename: 'zvv_header_element22.json',
+      description: 'Radiale Strahlen die vom Zentrum ausstrahlen. Symbolisiert Energie, Aktivität und das pulsierende Leben einer Verkehrsdrehscheibe.',
+      tags: ['radial', 'strahlen', 'energie', 'aktivität', 'zentrum', 'burst'],
+      dimensions: { width: 800, height: 800 },
+      fps: 30,
+      frames: 180,
+      duration: 6.0,
+      colors: ['#0E377D', '#72C6E7', '#69C34D', '#FFBA25', '#AE0880']
+    },
+    {
+      id: 23,
+      name: 'ZVV Header Element 23',
+      filename: 'zvv_header_element23.json',
+      description: 'Aufsteigende Partikel die sich zu einem Ziel sammeln. Repräsentiert Passagierströme und die Konvergenz verschiedener Routen.',
+      tags: ['partikel', 'aufsteigend', 'sammeln', 'passagiere', 'ströme', 'konvergenz'],
+      dimensions: { width: 600, height: 1000 },
+      fps: 30,
+      frames: 120,
+      duration: 4.0,
+      colors: ['#0E377D', '#72C6E7', '#69C34D', '#FA3920', '#FFBA25']
+    },
+    {
+      id: 24,
+      name: 'ZVV Header Element 24',
+      filename: 'zvv_header_element24.json',
+      description: 'Verbindungslinien zwischen Netzwerkknoten. Zeigt die Kommunikation und Verbindungen zwischen verschiedenen Stationen.',
+      tags: ['verbindung', 'netzwerk', 'knoten', 'kommunikation', 'stationen', 'transfer'],
+      dimensions: { width: 1000, height: 400 },
+      fps: 30,
+      frames: 180,
+      duration: 6.0,
+      colors: ['#0E377D', '#72C6E7', '#69C34D', '#FA3920']
     }
   ];
 

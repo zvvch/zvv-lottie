@@ -7,7 +7,7 @@ Professioneller Animation Player für ZVV Header-Animationen
 
 ## 📋 Übersicht
 
-Diese Repository enthält 14 professionelle Lottie-Animationen für ZVV Header-Elemente mit einem modernen, interaktiven Animation Player.
+Diese Repository enthält **24 professionelle Lottie-Animationen** für ZVV Header-Elemente mit einem modernen, interaktiven Animation Player.
 
 ### ✨ Features
 
@@ -25,25 +25,52 @@ Besuche: **[lottie.zvv.dev](https://lottie.zvv.dev)**
 ## 📁 Struktur
 
 ```
-zvv-lottiefiles/
+zvv-lottie/
 ├── README.md                          # Dieses Dokument
+├── CHANGELOG.md                       # Version History
+├── CONTRIBUTING.md                    # Contribution Guidelines
+├── SECURITY.md                        # Security Policy
+├── LICENSE                            # Copyright
+├── package.json                       # Projekt-Metadaten
+├── vercel.json                        # Vercel Configuration
 └── public/                            # Website Root (Vercel)
     ├── index.html                     # Animation Player
+    ├── manifest.json                  # PWA Manifest
+    ├── 404.html                       # Error Page
+    ├── robots.txt                     # SEO
+    ├── sitemap.xml                    # SEO
+    ├── api/
+    │   └── animations.js              # REST API
     ├── zvv_header_element01.json      # Animation 1
     ├── zvv_header_element02.json      # Animation 2
-    ├── ...                            # Weitere Animationen
-    └── zvv_header_element14.json      # Animation 14
+    ├── ...                            # Animationen 3-23
+    └── zvv_header_element24.json      # Animation 24
 ```
 
 ## 🎯 Animationen
 
-| Element | Beschreibung | Dimensionen | Frames |
-|---------|-------------|-------------|--------|
-| 01 | Konzentrische Kreise mit Pfeilen | 1952×3100 | 300 |
-| 02 | Horizontale Pfeile | 650×1440 | 150 |
-| 03 | Komplexe Pfeilbahnen | variabel | variabel |
-| 04 | Pfeilbahnen mit Kurven | 1917×693 | 300 |
-| 05-14 | Verschiedene Header-Animationen | variabel | variabel |
+### Original Set (1-14)
+| Element | Beschreibung | Dimensionen | FPS |
+|---------|-------------|-------------|-----|
+| 01 | Konzentrische Kreise mit Pfeilen | 1952×3100 | 25 |
+| 02 | Horizontale Pfeile | 650×1440 | 25 |
+| 03 | Komplexe Pfeilbahnen | variabel | 25 |
+| 04 | Pfeilbahnen mit Kurven | 1917×693 | 25 |
+| 05-14 | Verschiedene Header-Animationen | variabel | 25 |
+
+### Neue Animationen (15-24) ✨
+| Element | Typ | Beschreibung | Dimensionen |
+|---------|-----|-------------|-------------|
+| 15 | 🔵 Network Hub | Pulsierende Netzwerk-Knotenpunkte | 800×800 |
+| 16 | 🚀 Route | Animierte Routenvisualisierung A→B | 1200×400 |
+| 17 | 🌊 Wave Expansion | Wellenförmige Expansionen | 600×600 |
+| 18 | ⏱️ Progress | Zirkulärer Fortschrittsindikator | 500×500 |
+| 19 | 📈 Flow Lines | Mehrere fließende Wellenlinien | 1000×600 |
+| 20 | 🔄 Geo Squares | Rotierende geometrische Quadrate | 700×700 |
+| 21 | 📊 Bar Chart | Animierte Balkendiagramme | 900×500 |
+| 22 | ☀️ Radial Burst | Radiale Strahlen vom Zentrum | 800×800 |
+| 23 | ✨ Particles | Aufsteigende Partikel-Sammlung | 600×1000 |
+| 24 | 🔗 Network Nodes | Verbindungslinien zwischen Knoten | 1000×400 |
 
 ## 🛠️ Technologie
 
