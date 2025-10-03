@@ -194,7 +194,9 @@ export default function handler(req, res) {
       fps: 30,
       frames: 180,
       duration: 6.0,
-      colors: ['#0E377D', '#72C6E7', '#69C34D', '#FA3920', '#FFBA25', '#AE0880', '#F3358D']
+      colors: ['#0E377D', '#72C6E7', '#69C34D', '#FA3920', '#FFBA25', '#AE0880', '#F3358D'],
+      aiGenerated: true,
+      experimental: true
     },
     {
       id: 16,
@@ -206,7 +208,9 @@ export default function handler(req, res) {
       fps: 30,
       frames: 120,
       duration: 4.0,
-      colors: ['#0E377D', '#72C6E7', '#69C34D', '#FA3920']
+      colors: ['#0E377D', '#72C6E7', '#69C34D', '#FA3920'],
+      aiGenerated: true,
+      experimental: true
     },
     {
       id: 17,
@@ -218,7 +222,9 @@ export default function handler(req, res) {
       fps: 30,
       frames: 150,
       duration: 5.0,
-      colors: ['#0E377D', '#72C6E7', '#69C34D']
+      colors: ['#0E377D', '#72C6E7', '#69C34D'],
+      aiGenerated: true,
+      experimental: true
     },
     {
       id: 18,
@@ -230,7 +236,9 @@ export default function handler(req, res) {
       fps: 30,
       frames: 180,
       duration: 6.0,
-      colors: ['#0E377D', '#72C6E7', '#69C34D']
+      colors: ['#0E377D', '#72C6E7', '#69C34D'],
+      aiGenerated: true,
+      experimental: true
     },
     {
       id: 19,
@@ -242,7 +250,9 @@ export default function handler(req, res) {
       fps: 30,
       frames: 150,
       duration: 5.0,
-      colors: ['#0E377D', '#72C6E7', '#69C4D']
+      colors: ['#0E377D', '#72C6E7', '#69C4D'],
+      aiGenerated: true,
+      experimental: true
     },
     {
       id: 20,
@@ -254,7 +264,9 @@ export default function handler(req, res) {
       fps: 30,
       frames: 120,
       duration: 4.0,
-      colors: ['#0E377D', '#72C6E7', '#69C34D']
+      colors: ['#0E377D', '#72C6E7', '#69C34D'],
+      aiGenerated: true,
+      experimental: true
     },
     {
       id: 21,
@@ -266,7 +278,9 @@ export default function handler(req, res) {
       fps: 30,
       frames: 150,
       duration: 5.0,
-      colors: ['#0E377D', '#72C6E7', '#69C34D', '#FFBA25', '#FA3920']
+      colors: ['#0E377D', '#72C6E7', '#69C34D', '#FFBA25', '#FA3920'],
+      aiGenerated: true,
+      experimental: true
     },
     {
       id: 22,
@@ -278,7 +292,9 @@ export default function handler(req, res) {
       fps: 30,
       frames: 180,
       duration: 6.0,
-      colors: ['#0E377D', '#72C6E7', '#69C34D', '#FFBA25', '#AE0880']
+      colors: ['#0E377D', '#72C6E7', '#69C34D', '#FFBA25', '#AE0880'],
+      aiGenerated: true,
+      experimental: true
     },
     {
       id: 23,
@@ -290,7 +306,9 @@ export default function handler(req, res) {
       fps: 30,
       frames: 120,
       duration: 4.0,
-      colors: ['#0E377D', '#72C6E7', '#69C34D', '#FA3920', '#FFBA25']
+      colors: ['#0E377D', '#72C6E7', '#69C34D', '#FA3920', '#FFBA25'],
+      aiGenerated: true,
+      experimental: true
     },
     {
       id: 24,
@@ -302,7 +320,9 @@ export default function handler(req, res) {
       fps: 30,
       frames: 180,
       duration: 6.0,
-      colors: ['#0E377D', '#72C6E7', '#69C34D', '#FA3920']
+      colors: ['#0E377D', '#72C6E7', '#69C34D', '#FA3920'],
+      aiGenerated: true,
+      experimental: true
     }
   ];
 

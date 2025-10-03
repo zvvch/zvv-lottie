@@ -49,7 +49,9 @@ zvv-lottie/
 
 ## 🎯 Animationen
 
-### Original Set (1-14)
+### 📐 Original Set (1-14)
+**Von ZVV Design-Team erstellt**
+
 | Element | Beschreibung | Dimensionen | FPS |
 |---------|-------------|-------------|-----|
 | 01 | Konzentrische Kreise mit Pfeilen | 1952×3100 | 25 |
@@ -58,7 +60,13 @@ zvv-lottie/
 | 04 | Pfeilbahnen mit Kurven | 1917×693 | 25 |
 | 05-14 | Verschiedene Header-Animationen | variabel | 25 |
 
-### Neue Animationen (15-24) ✨
+---
+
+### 🤖 AI-Generierte Animationen (15-24)
+**Erstellt mit Claude AI - Experimentell**
+
+> ⚠️ **Hinweis:** Diese Animationen wurden AI-generiert und dienen als Ergänzung zum Original-Set. Sie folgen den ZVV-Design-Richtlinien, sind aber nicht vom offiziellen Design-Team erstellt.
+
 | Element | Typ | Beschreibung | Dimensionen |
 |---------|-----|-------------|-------------|
 | 15 | 🔵 Network Hub | Pulsierende Netzwerk-Knotenpunkte | 800×800 |

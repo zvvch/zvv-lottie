@@ -480,6 +480,20 @@
             text-align: center;
         }
 
+        .ai-badge {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: linear-gradient(135deg, rgba(114, 198, 231, 0.2), rgba(105, 195, 77, 0.2));
+            border: 1px solid rgba(114, 198, 231, 0.3);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: var(--primary-light);
+            backdrop-filter: blur(10px);
+        }
+
         .play-indicator {
             position: absolute;
             top: 50%;
@@ -716,8 +730,10 @@
             animationPaths.forEach((path, index) => {
                 const item = document.createElement('div');
                 item.className = 'animation-item' + (index === 0 ? ' active' : '');
+                const isAI = index >= 14; // Animationen 15-24 sind AI-generiert
                 item.innerHTML = `
                     <div class="animation-preview" id="preview${index}">
+                        ${isAI ? '<div class="ai-badge">🤖 AI</div>' : ''}
                         <div class="play-indicator">▶</div>
                     </div>
                     <div class="animation-name">Element ${String(index + 1).padStart(2, '0')}</div>
@@ -772,7 +788,9 @@
             currentIndex = index;
             
             // Update title
-            document.getElementById('animationTitle').textContent = `ZVV Header Element ${String(index + 1).padStart(2, '0')}`;
+            const isAI = index >= 14;
+            const titleText = `ZVV Header Element ${String(index + 1).padStart(2, '0')}`;
+            document.getElementById('animationTitle').textContent = isAI ? `${titleText} 🤖` : titleText;
             
             // Update meta info
             document.getElementById('animationDimensions').textContent = `${data.w}×${data.h}`;
