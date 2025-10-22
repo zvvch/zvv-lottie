@@ -229,16 +229,16 @@ Contributions sind willkommen! Bitte:
 
 ## 📝 Lizenz
 
-© 2024 Zürcher Verkehrsverbund (ZVV)
+© 2025 Zürcher Verkehrsverbund (ZVV)
 
 ## 👨‍💻 Autor
 
-Erstellt mit ❤️ für ZVV
+Marcel Rapold, Erstellt mit ❤️ für ZVV
 
 ## 📞 Support
 
 Bei Fragen oder Problemen:
-- 📧 Email: [support@zvv.ch](mailto:support@zvv.ch)
+- 📧 Email: [support@zvv.ch](mailto:ict@zvv.zh.ch)
 - 🐛 Issues: [GitHub Issues](https://github.com/zvvch/zvv-lottie/issues)
 
 ---
